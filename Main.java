@@ -1,31 +1,62 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         GameTracker tracker = new GameTracker();
-        System.out.println("=== Testing: Adding Games ===");
 
-        Game game1 = new Game("The Sims 4", "PC", "In progress");
-        Game game2 = new Game("Red Dead Redemption 2", "Xbox", "Wishlist");
-        Game game3 = new Game("Little Nightmare", "PS5", "Completed");
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
 
-        tracker.addGames(game1);
-        tracker.addGames(game2);
-        tracker.addGames(game3);
 
-        tracker.listAllGames();
+        System.out.println("=== Welcome to the Video Game Tracker! ===");
 
-        System.out.println("\n=== Testing: Filtering by Status ===");
+        while(running){
+            System.out.println("\n--- Main Meun ---");
+            System.out.println("1. Add a Game");
+            System.out.println("2. Remove a Game");
+            System.out.println("3. Viwe All Games");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice (1-4): ");
 
-        tracker.printGamesByStatus("In progress");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-        System.out.println("\n=== Testing: Removing a Game ===");
+            switch (choice) {
+                case 1:
+                    System.out.print("Enetr the game title:");
+                    String title = scanner.nextLine();
 
-        tracker.removeGame("The Sims 4");
+                    System.out.print("Enter platform: ");
+                    String platform = scanner.nextLine();
 
-        tracker.listAllGames();
+                    System.out.print("Enter status(e.g Wishlist, In progress, Complete)");
+                    String status = scanner.nextLine();
 
-        System.out.println("\n=== Testing: Removing a Game ===");
+                    Game newGame = new Game(title, platform, status);
+                    tracker.addGames(newGame);
+                    break;
+            
+                case 2:
+                    System.out.print("Enter the title of the game to remove: ");
+                    String removeTitle = scanner.nextLine();
+                    tracker.removeGame(removeTitle);
+                    break;
+                
+                case 3:
+                    tracker.listAllGames();
+                    break;
 
-        tracker.removeGame("Halo");
-        
+                case 4:
+                    System.out.println("Goodbye! Happy gaming.");
+                    running = false;
+                    break;
+                
+                default:
+                    System.out.println("Invalid option. Please enter a number between 1 and 4.");
+            }
+        }
+
+        scanner.close();
+       
     }
 }

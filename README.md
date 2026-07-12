@@ -1,14 +1,8 @@
 # Gaming Tracker
 
-Progress: 0%
-Priority: High
-Status: In progress
-
 ### About project
 
-This project is a gaming tracker that is dedicated to helping me keep count of the number of games I have played
-
-and also wish to play at some point in the future,
+This project is a gaming tracker that is dedicated to helping me keep count of the number of games I have played and also wish to play at some point in the future.
 
 # Phases
 

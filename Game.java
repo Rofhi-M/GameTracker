@@ -1,7 +1,7 @@
 public class Game {
-    String title;
-    String platform;
-    String status;
+    private String title;
+    private String platform;
+    private String status;
 
     public Game(String title, String platform, String status) {
         this.title = title;
@@ -29,7 +29,7 @@ public class Game {
         return status;
     }
 
-    public void setStatus() {
+    public void setStatus(String status) {
         this.status = status;
     }
 

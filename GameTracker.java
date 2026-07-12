@@ -1,4 +1,4 @@
-import java.util.ArrayList
+import java.util.ArrayList;
 
 public class GameTracker {
     
@@ -15,7 +15,7 @@ public class GameTracker {
 
     public boolean removeGame(String title){
         for (Game game : games) {
-            if (games.getTitle().equalsIgnoreCase(title)){
+            if (game.getTitle().equalsIgnoreCase(title)){
                 games.remove(game);
                 System.out.println("Game removed" + title);
                 return true;
@@ -26,7 +26,7 @@ public class GameTracker {
     }
 
     public void listAllGames(){
-        if (games.Isempty()) {
+        if (games.isEmpty()) {
             System.out.println("Your library is empty!");
             return;
         }

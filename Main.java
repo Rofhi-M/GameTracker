@@ -15,7 +15,8 @@ public class Main {
             System.out.println("1. Add a Game");
             System.out.println("2. Remove a Game");
             System.out.println("3. Viwe All Games");
-            System.out.println("4. Exit");
+            System.out.println("4. Game status");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice (1-4): ");
 
             int choice = scanner.nextInt();
@@ -23,13 +24,13 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enetr the game title:");
+                    System.out.print("Enetr the game title: ");
                     String title = scanner.nextLine();
 
                     System.out.print("Enter platform: ");
                     String platform = scanner.nextLine();
 
-                    System.out.print("Enter status(e.g Wishlist, In progress, Complete)");
+                    System.out.print("Enter status(e.g Wishlist, In progress, Complete): ");
                     String status = scanner.nextLine();
 
                     Game newGame = new Game(title, platform, status);
@@ -47,6 +48,12 @@ public class Main {
                     break;
 
                 case 4:
+                    System.out.print("Enter game status: ");
+                    status = scanner.nextLine();
+                    tracker.printGamesByStatus(status);
+                    break;
+
+                case 5:
                     System.out.println("Goodbye! Happy gaming.");
                     running = false;
                     break;

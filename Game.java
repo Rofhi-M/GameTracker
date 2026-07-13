@@ -33,6 +33,7 @@ public class Game {
         this.status = status;
     }
 
+    @Override
     public String toString() {
         return "Game: " + title + " | Platform: " + platform + " | Status: " + status;
     }

@@ -35,7 +35,7 @@ public class Game {
 
     @Override
     public String toString() {
-        return "Game: " + title + " | Platform: " + platform + " | Status: " + status;
+        return String.format("Game: %s| Platform: %s| Status: %s", title, platform, status);
     }
 
 }

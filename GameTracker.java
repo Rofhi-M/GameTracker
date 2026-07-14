@@ -10,14 +10,14 @@ public class GameTracker {
 
     public void addGames(Game game) {
         games.add(game);
-        System.out.println("Game added "+ game.getTitle());
+        System.out.printf("Game added %s", game.getTitle());
     }
 
     public boolean removeGame(String title){
         for (Game game : games) {
             if (game.getTitle().equalsIgnoreCase(title)){
                 games.remove(game);
-                System.out.println("Game removed " + title);
+                System.out.printf("Game removed %s", title);
                 return true;
             }
         }
